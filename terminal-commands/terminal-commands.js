@@ -9,3 +9,18 @@ module.exports.ls = () => {
         console.log(filesToString);
     });
 };
+
+
+module.exports.touch = (path, data) => {
+    fs.writeFile(path, data, function(err) {
+        if (err) throw err;
+        console.log('Successfully written');
+    });
+};
+
+
+module.exports.mkdir = () => {
+    fs.mkdir('./', (dir) => {
+        console.log('${dir} created!');
+    });
+};
